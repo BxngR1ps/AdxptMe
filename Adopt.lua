@@ -1,12 +1,14 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Adopt Me! - 10.19.24 - Kailey <3", "BloodTheme")
+
+local PlrName = game.Players.LocalPlayer.Name
+local Window = Library.CreateLib("Adopt Me! - 10.19.24 - Kailey <3 | USR:"..PlrName.." |", "BloodTheme")
 ---\\VARS
 PumpknFarm=false
 BasketFarm=false
 TileSkipFarm=false
 ---------------\\MAIN TAB
-local Tab = Window:NewTab("Main")
-local MainSection = Tab:NewSection("Main Section")
+local MainTab = Window:NewTab("Main")
+local MainSection = MainTab:NewSection("Main Section")
 MainSection:NewSlider("WalkSpeed", "Walkspeed slider", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
@@ -14,8 +16,8 @@ MainSection:NewSlider("JumpPower", "Jumppower slider", 500, 0, function(s) -- 50
 	game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
 -----------\\AUTO-FARM TAB
-local Tab = Window:NewTab("Auto-Farm")
-local FarmSection = Tab:NewSection("Auto-Farm Section")
+local FarmTab = Window:NewTab("Auto-Farm")
+local FarmSection = FarmTab:NewSection("Auto-Farm Section")
 FarmSection:NewToggle("Pumpkin Collect", "Tp To Pumpkins", function(state)
 	if state then
 		PumpknFarm = true
@@ -52,8 +54,8 @@ FarmSection:NewToggle("TileSkip Farm", "3k Per 10mins", function(state)
 	if state then
 		TileSkipFarm = true
 		if TileSkipFarm == true  then
-			while true do wait()
-				if workspace.Interiors.TileSkipMinigame.Minigame.GoalPlatform:FindFirstChild("GoalCollider") then 
+			while true do wait(0.1)
+				if workspace.Interiors.TileSkipMinigame.Minigame.GoalPlatform:FindFirstChild("GoalCollider") then
 					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Interiors.TileSkipMinigame.Minigame.GoalPlatform.GoalCollider.CFrame
 				end
 				
@@ -66,9 +68,9 @@ end)
 
 
 ---------------\\Misc TAB
-local Tab = Window:NewTab("Misc")
-local MainSection = Tab:NewSection("Misc Section")
-MainSection:NewButton("Inf Yeild", "Simple Admin", function()
+local MiscTab = Window:NewTab("Misc")
+local MiscSection = MiscTab:NewSection("Misc Section")
+MiscSection:NewButton("Inf Yeild", "Simple Admin", function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
