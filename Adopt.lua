@@ -6,6 +6,8 @@ local Window = Library.CreateLib("Adopt Me! - 10.19.24 - Kailey <3 | USR:"..PlrN
 PumpknFarm=false
 BasketFarm=false
 TileSkipFarm=false
+Locos={}
+
 ---------------\\MAIN TAB
 local MainTab = Window:NewTab("Main")
 local MainSection = MainTab:NewSection("Main Section")
@@ -14,6 +16,24 @@ MainSection:NewSlider("WalkSpeed", "Walkspeed slider", 500, 0, function(s) -- 50
 end)
 MainSection:NewSlider("JumpPower", "Jumppower slider", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
 	game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+----\Tp TAB
+local TPTab = Window:NewTab("Teleports")
+local TPSection = TPTab:NewSection("Main Section")
+TPSection:NewButton("Tp To Main", "Simple Tp", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Interiors["Neighborhood!Fall"].Doors.MainDoor.WorkingParts.TouchToEnter.CFrame
+end)
+
+local TPSECX = TPSection:NewDropdown("Dropdown","Info", Locos, function(currentOption)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Interiors["MainMap!Fall"].Doors[currentOption].VehicleBlocker.CFrame
+end)
+TPSection:NewButton("Click Me First <3", "Sets Up Dropdown", function()
+	table.clear(Locos)
+	for i,v in pairs(workspace.Interiors["MainMap!Fall"].Doors:GetChildren()) do
+		table.insert(Locos,v.Name)
+	end
+	TPSECX:Refresh(Locos)
 end)
 -----------\\AUTO-FARM TAB
 local FarmTab = Window:NewTab("Auto-Farm")
