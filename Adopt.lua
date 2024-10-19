@@ -73,7 +73,9 @@ local MiscSection = MiscTab:NewSection("Misc Section")
 MiscSection:NewButton("Inf Yeild", "Simple Admin", function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
-
+MiscSection:NewButton("Dark Dex", "Simple Admin", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+end)
 
 
 ---------------\\Settings TAB
