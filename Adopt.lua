@@ -107,6 +107,26 @@ FarmSection:NewToggle("TileSkip Farm", "3k Per 10mins", function(state)
 end)
 
 
+
+
+---------------\\Settings TAB
+local Tab = Window:NewTab("Settings")
+local SettingsSection = Tab:NewSection("Settings Section")
+SettingsSection:NewKeybind("UI Keybind", "Ui Show/Hide", Enum.KeyCode.K, function()
+	Library:ToggleUI()
+end)
+SettingsSection:NewButton("Anti-AFK", "Simple Admin", function()
+	while true do
+		game:GetService("Players").LocalPlayer.Idled:connect(function()
+			game:FindService("VirtualUser"):Button2Down(Vector2.new(0,0),game:GetService("Workspace").CurrentCamera.CFrame)
+			task.wait(1)
+			game:FindService("VirtualUser"):Button2Up(Vector2.new(0,0),game:GetService("Workspace").CurrentCamera.CFrame)
+		end)
+		wait(600)
+	end
+end)
+
+
 ---------------\\Misc TAB
 local MiscTab = Window:NewTab("Misc")
 local MiscSection = MiscTab:NewSection("Misc Section")
@@ -115,12 +135,4 @@ MiscSection:NewButton("Inf Yeild", "Simple Admin", function()
 end)
 MiscSection:NewButton("Dark Dex", "Simple Admin", function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
-end)
-
-
----------------\\Settings TAB
-local Tab = Window:NewTab("Settings")
-local SettingsSection = Tab:NewSection("Settings Section")
-SettingsSection:NewKeybind("UI Keybind", "Ui Show/Hide", Enum.KeyCode.K, function()
-	Library:ToggleUI()
 end)
