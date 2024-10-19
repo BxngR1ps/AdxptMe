@@ -2,6 +2,12 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 
 local PlrName = game.Players.LocalPlayer.Name
 local Window = Library.CreateLib("Adopt Me! - 10.19.24 - Kailey <3 | USR:"..PlrName.." |", "BloodTheme")
+------\\Sound-TROLL
+local s = Instance.new("Sound")
+s.SoundId = "rbxassetid://6410047369"
+s.Parent = game.Workspace
+s:Play()
+
 ---\\VARS
 PumpknFarm=false
 BasketFarm=false
@@ -22,6 +28,16 @@ end)
 local TPTab = Window:NewTab("Teleports")
 local TPSection = TPTab:NewSection("Main Section")
 
+
+TPSection:NewButton("Tp To Main", "Simple Tp", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Interiors["Neighborhood!Fall"].Doors.MainDoor.WorkingParts.TouchToEnter.CFrame
+end)
+TPSection:NewButton("Tp To Nebrhood", "Simple Tp", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Interiors["MainMap!Fall"].Doors["Neighborhood/MainDoor"].WorkingParts.TouchToEnter.CFrame
+end)
+TPSection:NewButton("Tp To Home", "Simple Tp", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Interiors["Neighborhood!Fall"].Doors.MainDoor.WorkingParts.TouchToEnter.CFrame
+end)
 TPSection:NewButton("Click Me First <3", "Grabs Tp Locations", function()
 	table.clear(Locos)
 	for i,v in pairs(workspace.Interiors["MainMap!Fall"].Doors:GetChildren()) do
@@ -29,10 +45,6 @@ TPSection:NewButton("Click Me First <3", "Grabs Tp Locations", function()
 	end
 	TPSECX:Refresh(Locos)
 end)
-TPSection:NewButton("Tp To Main", "Simple Tp", function()
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Interiors["Neighborhood!Fall"].Doors.MainDoor.WorkingParts.TouchToEnter.CFrame
-end)
-
 local TPSECX = TPSection:NewDropdown("Tp To?","Locations", Locos, function(currentOption)
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Interiors["MainMap!Fall"].Doors[currentOption].VehicleBlocker.CFrame
 end)
@@ -77,7 +89,7 @@ FarmSection:NewToggle("TileSkip Farm", "3k Per 10mins", function(state)
 		if TileSkipFarm == true  then
 			while true do wait(0.1)
 				if workspace.Interiors.TileSkipMinigame.Minigame.GoalPlatform:FindFirstChild("GoalCollider") then
-					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Interiors.TileSkipMinigame.Minigame.GoalPlatform.GoalCollider.CFrame
+					
 				end
 				
 			end
