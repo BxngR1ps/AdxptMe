@@ -74,7 +74,13 @@ FarmSection:NewToggle("Candy Basket Collect", "Tp To Pumpkins", function(state)
 				if v.Name == "CandyBowl" then
 					if v.Candy.polySurface157.Transparency ~= 1 then
 						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.UseBlock.CFrame
-						wait(1)
+						wait(0.4)
+						local args = {
+							[1] = game:GetService("Players"):WaitForChild(v.Parent.Doors.MainDoor.WorkingParts.Configuration.house_owner.Value)
+						}
+
+						game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("Gamnr/jkuIYSKfDwr/fImKzwPfMTSF"):InvokeServer(unpack(args))
+						wait(0.2)
 					end
 				end
 			end
@@ -89,10 +95,10 @@ FarmSection:NewToggle("TileSkip Farm", "3k Per 10mins", function(state)
 		TileSkipFarm = true
 		if TileSkipFarm == true  then
 			while true do wait(0.1)
-				if workspace.Interiors.TileSkipMinigame.Minigame.GoalPlatform:FindFirstChild("GoalCollider") then
-					
+				if workspace.Interiors:FindFirstChild("TileSkipMinigame") then
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Interiors.TileSkipMinigame.Minigame.GoalPlatform.GoalCollider.CFrame
 				end
-				
+
 			end
 		end
 	else
