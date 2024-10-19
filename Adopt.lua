@@ -77,6 +77,6 @@ end)
 ---------------\\Settings TAB
 local Tab = Window:NewTab("Settings")
 local SettingsSection = Tab:NewSection("Settings Section")
-SettingsSection:NewKeybind("UI Keybind", "Ui Show/Hide", Enum.KeyCode.F, function()
+SettingsSection:NewKeybind("UI Keybind", "Ui Show/Hide", Enum.KeyCode.K, function()
 	Library:ToggleUI()
 end)
