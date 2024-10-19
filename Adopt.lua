@@ -38,15 +38,16 @@ end)
 TPSection:NewButton("Tp To Home", "Simple Tp", function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Interiors["Neighborhood!Fall"].Doors.MainDoor.WorkingParts.TouchToEnter.CFrame
 end)
+
+local TPSECX = TPSection:NewDropdown("Tp To?","Locations", Locos, function(currentOption)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Interiors["MainMap!Fall"].Doors[currentOption].VehicleBlocker.CFrame
+end)
 TPSection:NewButton("Click Me First <3", "Grabs Tp Locations", function()
 	table.clear(Locos)
 	for i,v in pairs(workspace.Interiors["MainMap!Fall"].Doors:GetChildren()) do
 		table.insert(Locos,v.Name)
 	end
 	TPSECX:Refresh(Locos)
-end)
-local TPSECX = TPSection:NewDropdown("Tp To?","Locations", Locos, function(currentOption)
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Interiors["MainMap!Fall"].Doors[currentOption].VehicleBlocker.CFrame
 end)
 -----------\\AUTO-FARM TAB
 local FarmTab = Window:NewTab("Auto-Farm")
