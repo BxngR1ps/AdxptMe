@@ -7,10 +7,10 @@ TileSkipFarm=false
 ---------------\\MAIN TAB
 local Tab = Window:NewTab("Main")
 local MainSection = Tab:NewSection("Main Section")
-MainSection:NewSlider("WalkSpeed", "Walkspeed slider", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+MainSection:NewSlider("WalkSpeed", "Walkspeed slider", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
-MainSection:NewSlider("JumpPower", "Jumppower slider", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+MainSection:NewSlider("JumpPower", "Jumppower slider", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
 	game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
 -----------\\AUTO-FARM TAB
@@ -64,3 +64,19 @@ FarmSection:NewToggle("TileSkip Farm", "3k Per 10mins", function(state)
 	end
 end)
 
+
+---------------\\Misc TAB
+local Tab = Window:NewTab("Misc")
+local MainSection = Tab:NewSection("Misc Section")
+MainSection:NewButton("Inf Yeild", "Simple Admin", function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+
+
+---------------\\Settings TAB
+local Tab = Window:NewTab("Settings")
+local SettingsSection = Tab:NewSection("Settings Section")
+SettingsSection:NewKeybind("UI Keybind", "Ui Show/Hide", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
