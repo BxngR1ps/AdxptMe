@@ -71,8 +71,10 @@ FarmSection:NewToggle("Pumpkin Collect", "Tp To Pumpkins", function(state)
 		PumpknFarm = true
 		if PumpknFarm == true  then
 			for i,v in pairs(workspace.Collectables:GetChildren()) do
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Collider.CFrame
-				wait(0.4)
+				while PumpknFarm  do
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Collider.CFrame
+					wait(0.4)
+				end
 			end
 		end
 	else
@@ -93,11 +95,11 @@ FarmSection:NewToggle("Candy Basket Collect", "Tp To Pumpkins", function(state)
 							[1] = game:GetService("Players"):WaitForChild(v.Parent.Doors.MainDoor.WorkingParts.Configuration.house_owner.Value)
 						}
 
-						game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("Gamnr/jkuIYSKfDwr/fImKzwPfMTSF"):InvokeServer(unpack(args))
+						game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("KeqrvDnoyMcWOjH/vDjMqOC/TjQXWJ"):InvokeServer(unpack(args))
 						wait(0.2)
 					end
 				end
-			end
+				end
 		end
 	else
 		BasketFarm = false
@@ -166,7 +168,7 @@ FarmSection:NewToggle("Pet Auto-Farm", "Simple Auto Farm", function(state)
 								[5] = workspace:WaitForChild("Pets"):WaitForChild(pet)
 							}
 
-							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("JryxouoJZTLNqHyLsLyaPNKGSUSG"):InvokeServer(unpack(args))
+							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("KszypvpKaUMOrIzMtMzbQOLHTVTH"):InvokeServer(unpack(args))
 						elseif v.Name == "dirty" then
 							local args = {
 								[1] = game:GetService("Players").LocalPlayer,
@@ -178,7 +180,7 @@ FarmSection:NewToggle("Pet Auto-Farm", "Simple Auto Farm", function(state)
 								[5] = workspace:WaitForChild("Pets"):WaitForChild(pet)
 							}
 
-							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("JryxouoJZTLNqHyLsLyaPNKGSUSG"):InvokeServer(unpack(args))
+							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("KszypvpKaUMOrIzMtMzbQOLHTVTH"):InvokeServer(unpack(args))
 						elseif v.Name == "hungry" then
 							local args = {
 								[1] = game:GetService("Players").LocalPlayer,
@@ -190,9 +192,9 @@ FarmSection:NewToggle("Pet Auto-Farm", "Simple Auto Farm", function(state)
 								[5] = workspace:WaitForChild("Pets"):WaitForChild(pet)
 							}
 
-							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("JryxouoJZTLNqHyLsLyaPNKGSUSG"):InvokeServer(unpack(args))
+							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("KszypvpKaUMOrIzMtMzbQOLHTVTH"):InvokeServer(unpack(args))
 						elseif v.Name == "bored" then
-
+					
 						elseif v.Name == "thirsty" then
 							local args = {
 								[1] = game:GetService("Players").LocalPlayer,
@@ -204,7 +206,7 @@ FarmSection:NewToggle("Pet Auto-Farm", "Simple Auto Farm", function(state)
 								[5] = workspace:WaitForChild("Pets"):WaitForChild(pet)
 							}
 
-							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("JryxouoJZTLNqHyLsLyaPNKGSUSG"):InvokeServer(unpack(args))
+							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("KszypvpKaUMOrIzMtMzbQOLHTVTH"):InvokeServer(unpack(args))
 						elseif v.Name == "sick" then
 
 						elseif v.Name == "school" then
@@ -212,7 +214,7 @@ FarmSection:NewToggle("Pet Auto-Farm", "Simple Auto Farm", function(state)
 						elseif v.Name == "salon" then
 
 						elseif v.Name == "pizza_party" then
-
+						
 						elseif v.Name == "camping" then
 
 						elseif v.Name == "beach_party" then
