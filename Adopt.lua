@@ -212,6 +212,7 @@ FarmSection:NewToggle("4 | Pet Auto-Farm", "Simple Auto Farm", function(state)
 						elseif v.Name == "salon" then
 
 						elseif v.Name == "pizza_party" then
+							--[[
 							workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.Configuration.destination_id.Value = "PizzaShop"
 
 							workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.TouchToEnter.Size = Vector3.new("100,100,100")
@@ -237,6 +238,7 @@ FarmSection:NewToggle("4 | Pet Auto-Farm", "Simple Auto Farm", function(state)
 									end
 								end
 							end
+							]]--
 
 						elseif v.Name == "camping" then
 
