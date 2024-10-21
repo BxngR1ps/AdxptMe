@@ -21,6 +21,10 @@ shower = ""
 watr = ""
 food = ""
 crib = ""
+----\\ Funtions
+BlockRemote = "wdkjagawLFy/cukyeykMB/xtEGEt"
+PetPickup = "pSegluJDwEmkdCceB"
+
 ---------------\\MAIN TAB
 local MainTab = Window:NewTab("Main")
 local MainSection = MainTab:NewSection("Main Section")
@@ -150,8 +154,7 @@ end)
 FarmSection:NewToggle("4 | Pet Auto-Farm", "Simple Auto Farm", function(state)
 	if state then
 		Petfarm = true
-		if Petfarm == true  then
-			while true do wait(0.1)
+		while Petfarm == true  do wait(0.4)
 				game:GetService("Players").LocalPlayer.PlayerGui.AilmentsMonitorApp:WaitForChild("Ailments")
 				for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.AilmentsMonitorApp.Ailments:GetChildren()) do
 					if v:IsA("Frame") then
@@ -166,7 +169,7 @@ FarmSection:NewToggle("4 | Pet Auto-Farm", "Simple Auto Farm", function(state)
 								[5] = workspace:WaitForChild("Pets"):WaitForChild(pet)
 							}
 
-							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("Lt/zqwqLbVNPsJ/NuN/cRPMIUWUI"):InvokeServer(unpack(args))
+							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild(BlockRemote):InvokeServer(unpack(args))
 						elseif v.Name == "dirty" then
 							local args = {
 								[1] = game:GetService("Players").LocalPlayer,
@@ -178,7 +181,7 @@ FarmSection:NewToggle("4 | Pet Auto-Farm", "Simple Auto Farm", function(state)
 								[5] = workspace:WaitForChild("Pets"):WaitForChild(pet)
 							}
 
-							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("Lt/zqwqLbVNPsJ/NuN/cRPMIUWUI"):InvokeServer(unpack(args))
+							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild(BlockRemote):InvokeServer(unpack(args))
 						elseif v.Name == "hungry" then
 							local args = {
 								[1] = game:GetService("Players").LocalPlayer,
@@ -190,9 +193,16 @@ FarmSection:NewToggle("4 | Pet Auto-Farm", "Simple Auto Farm", function(state)
 								[5] = workspace:WaitForChild("Pets"):WaitForChild(pet)
 							}
 
-							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("Lt/zqwqLbVNPsJ/NuN/cRPMIUWUI"):InvokeServer(unpack(args))
+							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild(BlockRemote):InvokeServer(unpack(args))
 						elseif v.Name == "bored" then
+							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.StaticMap.Park.Roundabout.SpinInteraction.CFrame
+							task.wait(2)
+							local args = {
+								[1] = workspace:WaitForChild("Pets"):WaitForChild(pet)
+							}
 
+							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild(PetPickup):FireServer(unpack(args))
+							
 						elseif v.Name == "thirsty" then
 							local args = {
 								[1] = game:GetService("Players").LocalPlayer,
@@ -204,21 +214,39 @@ FarmSection:NewToggle("4 | Pet Auto-Farm", "Simple Auto Farm", function(state)
 								[5] = workspace:WaitForChild("Pets"):WaitForChild(pet)
 							}
 
-							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("Lt/zqwqLbVNPsJ/NuN/cRPMIUWUI"):InvokeServer(unpack(args))
+							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild(BlockRemote):InvokeServer(unpack(args))
 						elseif v.Name == "sick" then
-
+						
 						elseif v.Name == "school" then
-
+						workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.Configuration.NoAutoOpen.Name = "NoAutoOpenB"
+						workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].KaileyXwx.Doors.MainDoor.WorkingParts.Configuration.destination_id.Value = "School"
+						task.wait(2)
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.HouseInteriors.blueprint.KaileyXwx.Doors.MainDoor.WorkingParts.TouchToEnter.CFrame
+						task.wait(2)
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7998.58984, 7956.7959, -4020.87305, -0.999099433, -1.01255164e-08, 0.0424300581, -1.13470993e-08, 1, -2.85496675e-08, -0.0424300581, -2.9005415e-08, -0.999099433)
+						task.wait(60)
+						workspace.Interiors.School.Doors.MainDoor.WorkingParts.Configuration.destination_door_id.Value = "MainDoor"
+						workspace.Interiors.School.Doors.MainDoor.WorkingParts.Configuration.destination_id.Value = "housing"
+						task.wait(2)
+						workspace.Interiors.School.Doors.MainDoor.WorkingParts.TouchToEnter.Size = Vector3.new(100,100,100)
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Interiors.School.Doors.MainDoor.WorkingParts.TouchToEnter.CFrame
+						wait(5)
+						if v.Name == "house_owner" then
+							if v.Value == game.Players.LocalPlayer.Name then
+								v.Parent.Parent.TouchToEnter.Size = Vector3.new(100,100,100)
+								game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.Parent.TouchToEnter.CFrame
+							end
+						end
 						elseif v.Name == "salon" then
 
 						elseif v.Name == "pizza_party" then
-							--[[
-							workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.Configuration.destination_id.Value = "PizzaShop"
-
+						workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.Configuration.destination_id.Value = "PizzaShop"
+						workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.Configuration.NoAutoOpen.Name = "NoAutoOpenB"
 							workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.TouchToEnter.Size = Vector3.new("100,100,100")
 							wait(3)
-							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.TouchToEnter.CFrame
-
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.TouchToEnter.CFrame
+						
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7991.75781, 7970.06445, -7995.87988, 0.951279819, -3.67718265e-08, 0.308328897, 5.72904035e-08, 1, -5.74950292e-08, -0.308328897, 7.23581479e-08, 0.951279819)
 							wait(60) -- Let Pet Cook
 
 							workspace.Interiors:WaitForChild("PizzaShop").Doors.MainDoor.WorkingParts.Configuration.destination_id.Value = "housing"	
@@ -230,7 +258,7 @@ FarmSection:NewToggle("4 | Pet Auto-Farm", "Simple Auto Farm", function(state)
 							game.Players.LocalPlayer.Character.Humanoid.Jump = true
 							wait(3)
 							workspace.Interiors["Neighborhood!Fall"].Doors:WaitForChild("MainDoor") 
-							wait(5)
+							wait(7)
 							for i,v in pairs(workspace.HouseExteriors:GetDescendants()) do
 								if v.Name == "house_owner" then
 									if v.Value == game.Players.LocalPlayer.Name then
@@ -238,18 +266,20 @@ FarmSection:NewToggle("4 | Pet Auto-Farm", "Simple Auto Farm", function(state)
 									end
 								end
 							end
-							]]--
 
-						elseif v.Name == "camping" then
+					elseif v.Name == "camping" then
+						local floor = Instance.new("Part")
+						floor.Size = Vector3.new("")
+					elseif v.Name == "beach_party" then
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.StaticMap.Beach.BeachPartyAilmentTarget.CFrame
+						wait(1)
+						local args = {
+							[1] = workspace:WaitForChild("Pets"):WaitForChild(pet)
+						}
 
-						elseif v.Name == "beach_party" then
-
-
-						end		
-
-
+						game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild(PetPickup):FireServer(unpack(args))
+					end		
 					end
-				end
 			end
 		end
 	else
