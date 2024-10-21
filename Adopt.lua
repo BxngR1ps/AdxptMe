@@ -1,7 +1,7 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
 local PlrName = game.Players.LocalPlayer.Name
-local Window = Library.CreateLib("Adopt Me! - 10.21.24 - Kailey <3 | USR:"..PlrName.." |", "BloodTheme")
+local Window = Library.CreateLib("Adopt Me! - 10.19.24 - Kailey <3 | USR:"..PlrName.." |VERNUM = V1.0001|", "BloodTheme")
 ------\\Sound-TROLL
 local s = Instance.new("Sound")
 s.SoundId = "rbxassetid://6410047369"
@@ -229,9 +229,9 @@ FarmSection:NewToggle("4 | Pet Auto-Farm", "Simple Auto Farm", function(state)
 							game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild(BlockRemote):InvokeServer(unpack(args))
 						elseif v.Name == "sick" then
 						workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.Configuration.NoAutoOpen.Name = "NoAutoOpenB"
-						workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].KaileyXwx.Doors.MainDoor.WorkingParts.Configuration.destination_id.Value = "Hospital"
+						workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.Configuration.destination_id.Value = "Hospital"
 						task.wait(2)
-						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.HouseInteriors.blueprint.KaileyXwx.Doors.MainDoor.WorkingParts.TouchToEnter.CFrame
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.TouchToEnter.CFrame
 						wait(2)
 						workspace.Interiors:WaitForChild("Hospital")
 						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3989.63623, 7877.88379, -16107.6396, -0.572989404, -5.37710356e-08, -0.819562793, -8.9868557e-08, 1, -2.77868395e-09, 0.819562793, 7.20607645e-08, -0.572989404)
@@ -249,9 +249,9 @@ FarmSection:NewToggle("4 | Pet Auto-Farm", "Simple Auto Farm", function(state)
 						
 						elseif v.Name == "school" then
 						workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.Configuration.NoAutoOpen.Name = "NoAutoOpenB"
-						workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].KaileyXwx.Doors.MainDoor.WorkingParts.Configuration.destination_id.Value = "School"
+						workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.Configuration.destination_id.Value = "School"
 						task.wait(2)
-						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.HouseInteriors.blueprint.KaileyXwx.Doors.MainDoor.WorkingParts.TouchToEnter.CFrame
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.TouchToEnter.CFrame
 						task.wait(2)
 						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7998.58984, 7956.7959, -4020.87305, -0.999099433, -1.01255164e-08, 0.0424300581, -1.13470993e-08, 1, -2.85496675e-08, -0.0424300581, -2.9005415e-08, -0.999099433)
 						task.wait(60)
@@ -274,8 +274,8 @@ FarmSection:NewToggle("4 | Pet Auto-Farm", "Simple Auto Farm", function(state)
 						workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.Configuration.NoAutoOpen.Name = "NoAutoOpenB"
 						
 						task.wait(2)
-						workspace.HouseInteriors.blueprint.KaileyXwx.Doors.MainDoor.WorkingParts.TouchToEnter.Size = Vector3.new(100,100,100)
-						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.HouseInteriors.blueprint.KaileyXwx.Doors.MainDoor.WorkingParts.TouchToEnter.CFrame
+						workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.TouchToEnter.Size = Vector3.new(100,100,100)
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.TouchToEnter.CFrame
 						wait(1)
 						task.wait(60)
 						workspace.Interiors:WaitForChild("School").Doors.MainDoor.WorkingParts.Configuration.destination_door_id.Value = "MainDoor"
