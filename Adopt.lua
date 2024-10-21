@@ -235,18 +235,18 @@ FarmSection:NewToggle("4 | Pet Auto-Farm", "Simple Auto Farm", function(state)
 						wait(2)
 						workspace.Interiors:WaitForChild("Hospital")
 						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3989.63623, 7877.88379, -16107.6396, -0.572989404, -5.37710356e-08, -0.819562793, -8.9868557e-08, 1, -2.77868395e-09, 0.819562793, 7.20607645e-08, -0.572989404)
-						for i,v in pairs(workspace.HouseInteriors.furniture:GetDe)
 						local args = {
 							[1] = "f-40",
 							[2] = "Seat1",
 							[3] = {
 								["cframe"] = CFrame.new(-3983.97509765625, 7877.548828125, -16107.6787109375, -1, 0, 0, 0, 1, 0, 0, 0, -1)
 							},
-							[4] = workspace:WaitForChild("Pets"):WaitForChild("Cat")
+							[4] = workspace:WaitForChild("Pets"):WaitForChild(pet)
 						}
 
 						game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("wdkjagawLFy/cukyeykPvBoBuAEUJHEAMOMA"):InvokeServer(unpack(args))
-
+						wait(30)
+						
 						elseif v.Name == "school" then
 						workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].Doors.MainDoor.WorkingParts.Configuration.NoAutoOpen.Name = "NoAutoOpenB"
 						workspace.HouseInteriors.blueprint[game.Players.LocalPlayer.Name].KaileyXwx.Doors.MainDoor.WorkingParts.Configuration.destination_id.Value = "School"
