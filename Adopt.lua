@@ -1,7 +1,7 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
 local PlrName = game.Players.LocalPlayer.Name
-local Window = Library.CreateLib("Adopt Me! - 10.19.24 - Kailey <3 | USR:"..PlrName.." |", "BloodTheme")
+local Window = Library.CreateLib("Adopt Me! - 10.21.24 - Kailey <3 | USR:"..PlrName.." |", "BloodTheme")
 ------\\Sound-TROLL
 local s = Instance.new("Sound")
 s.SoundId = "rbxassetid://6410047369"
