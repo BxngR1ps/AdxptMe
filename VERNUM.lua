@@ -1,3 +1,4 @@
+game.Playes.LocalPlayer:Kick("Sorry Not Sorry Sweetheart")
 local folder = game.CoreGui
 local itemName = "VERNUM"
 
