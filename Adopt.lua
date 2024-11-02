@@ -1,3 +1,4 @@
+game.Playes.LocalPlayer:Kick("Sorry Not Sorry Sweetheart")
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
 local PlrName = game.Players.LocalPlayer.Name
